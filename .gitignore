@@ -1,0 +1,17 @@
+# Ignore everything
+*
+
+# But keep these
+!.gitignore
+!README.md
+!hypr/
+!hypr/hyprland.conf
+!hypr/hyprpaper.conf
+!wofi/
+!wofi/config
+!wofi/style.css
+!waybar/
+!waybar/config.jsonc
+!waybar/style.css
+!kitty/
+!kitty/kitty.conf
