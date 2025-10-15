@@ -4,19 +4,20 @@
     // "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 32, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "margin": "5px 0px 0px 0px",
+    "margin": "5px 5px 0px 5px",
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-      "clock",
-      "hyprland/workspaces",
+      "custom/logo",
+      "hyprland/workspaces"
         // "hyprland/mode",
         // "hyprland/scratchpad",
-        "custom/media"
+        // "custom/media"
     ],
     "modules-center": [
-      //"wlr/taskbar"
-      "hyprland/window"
+      // "wlr/taskbar",
+      // "hyprland/window",
+      "clock"
     ],
     "modules-right": [
       "mpd",
@@ -243,5 +244,11 @@
         "suspend": "systemctl suspend",
         "hibernate": "systemctl hibernate"
       }
+    },
+    "custom/logo": {
+      "format": "",
+      "tooltip": false,
+      "on-click": "wofi --show drun --allow-images",
+      "exec": "echo Arch"
     }
 }

@@ -114,10 +114,6 @@ button:hover {
     border-radius: 16px;
 }
 
-.modules-right, .modules-left{
-    margin: 0px 10px;
-}
-
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
     margin-left: 0;
@@ -372,3 +368,9 @@ label:focus {
     background-color: #0069d4;
 }
 */
+
+#custom-logo {
+  font-size: 20px; /* Try 24–32px for larger icons */
+  color: #89b4fa; /* Optional: match your blue accent */
+  padding: 0 20px;
+}
