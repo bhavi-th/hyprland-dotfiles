@@ -129,6 +129,10 @@ button:hover {
     border-radius: 16px;
 }
 
+#battery{
+  font-size: 16px;
+}
+
 /*
 #battery {
     background-color: #ffffff;
@@ -163,20 +167,20 @@ button:hover {
 }
 
 #taskbar button {
-  background-color: rgba(0, 0, 0, 0.3);
-  padding:0;
+  background-color: transparent;
+  padding:0px 3px 0px 3px;
   margin:0px 5px 0px 5px;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   border-radius: 16px;
   transition: border 0.2s ease;
 }
 
 #taskbar button:hover {
-  border: 2px solid black;
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 #taskbar button.active {
-  border: 2px solid black;
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 #taskbar button.minimized {
@@ -373,4 +377,10 @@ label:focus {
   font-size: 20px; /* Try 24–32px for larger icons */
   color: #89b4fa; /* Optional: match your blue accent */
   padding: 0 20px;
+}
+
+#custom-power{
+  font-size: 16px;
+  margin-left: 10px;
+  margin-right: 20px;
 }
