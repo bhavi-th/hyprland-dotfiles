@@ -6,7 +6,7 @@
 !README.md
 !hypr/
 !hypr/hyprland.conf
-!hypr/hyprpaper.conf
+!hypr/hyprlock.conf
 !wofi/
 !wofi/config
 !wofi/style.css
@@ -15,3 +15,10 @@
 !waybar/style.css
 !kitty/
 !kitty/kitty.conf
+!swaync/
+!swaync/config.json
+swaync/configSchema.json
+!swaync/style.css
+!wlogout/
+!wlogout/layout
+!wlogout/style.css
