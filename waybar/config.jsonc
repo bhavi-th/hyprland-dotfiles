@@ -2,7 +2,7 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 32, // Waybar height (to be removed for auto height)
+    "height": 25, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "margin": "5px 5px 0px 5px",
     "spacing": 4, // Gaps between modules (4px)
@@ -227,9 +227,9 @@
         // "tooltip-format": "{ifname} via {gwaddr} ",
         "tooltip-format": "{essid} ({signalStrength}%)",
         "format-linked": "{ifname} (No IP) ",
-        // "format-disconnected": "Disconnected ⚠",
+        "format-disconnected": "",
         "tooltip-format-disconnected": "Disconnected",
-        "format-disconnected": "⚠",
+        // "format-disconnected": "⚠",
         // "format-alt": "{ifname}: {ipaddr}/{cidr}",
         "format-alt": "{essid}",
     },
@@ -309,7 +309,7 @@
       "on-click": "wlogout"
     },
     "custom/logo": {
-      "format": "",
+      "format":" ",
       "tooltip": false,
       "on-click": "wofi --show drun --allow-images",
       "exec": "echo Arch"

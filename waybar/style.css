@@ -1,6 +1,5 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 14px;
 }
 
@@ -125,7 +124,7 @@ button:hover {
 }
 
 #clock {
-    font-weight: bold;
+    font-weight: 600;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 16px;
 }
@@ -375,13 +374,13 @@ label:focus {
 */
 
 #custom-logo {
-  font-size: 20px; /* Try 24–32px for larger icons */
-  color: #89b4fa; /* Optional: match your blue accent */
-  padding: 0 20px;
+  font-size: 22px;
+  color: rgba(0, 0, 0, 0.4);
+  padding: 0px;
+  margin:0px 10px;
 }
 
 #custom-power{
-  font-size: 16px;
   margin-left: 10px;
   margin-right: 20px;
 }
