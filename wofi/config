@@ -1,1 +1,5 @@
 style=/home/bhavith/.config/wofi/style.css
+
+allow_images=true
+width=450
+height=300

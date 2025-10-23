@@ -221,7 +221,8 @@
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         // "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-wifi": "",
+        // "format-wifi": "",
+        "format": "",
         "format-ethernet": "{ipaddr}/{cidr} ",
         // "tooltip-format": "{ifname} via {gwaddr} ",
         "tooltip-format": "{essid} ({signalStrength}%)",
@@ -229,7 +230,8 @@
         // "format-disconnected": "Disconnected ⚠",
         "tooltip-format-disconnected": "Disconnected",
         "format-disconnected": "⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        // "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "format-alt": "{essid}",
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float

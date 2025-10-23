@@ -3,7 +3,7 @@
 }
 
 window {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.8);
     border: none;
     border-radius: 1rem;
     font-size: 1rem;
@@ -20,7 +20,9 @@ window {
 #entry {
     background-color: transparent;
     color: #cdd6f4;
-    padding: 0.5rem 0.75rem;
+    border: 2px solid rgba(255, 255, 255, 0);
+    padding: 0.25rem;
+    margin: 0.5rem;
 }
 
 #entry:selected {
