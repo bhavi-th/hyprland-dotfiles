@@ -13,6 +13,9 @@
 !waybar/
 !waybar/config.jsonc
 !waybar/style.css
+!waybar/scripts
+!waybar/scripts/fullscreen_check.sh
+!waybar/scripts/scroll_media.sh
 !waybar/check.sh
 !kitty/
 !kitty/kitty.conf
