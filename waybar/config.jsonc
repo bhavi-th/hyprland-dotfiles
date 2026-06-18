@@ -2,21 +2,19 @@
   "layer": "top",
   "position": "top",
   "height": 34,
-  "spacing": 4,
+  "margin-top": 2,
 
   // Choose the order of the modules
   "modules-left": ["hyprland/workspaces", "custom/fullscreen", "custom/media"],
   "modules-center": ["clock"],
   "modules-right": [
+    "tray",
     "pulseaudio",
     "network",
-    "power-profiles-daemon",
     "cpu",
-    "memory",
     "temperature",
-    "backlight",
     "battery",
-    "custom/power",
+    "custom/power"
   ],
 
   "custom/fullscreen": {
@@ -40,7 +38,6 @@
   "custom/media": {
     "format": "{}",
     "exec": "/home/bhavith/.config/waybar/scripts/scroll_media.sh",
-    "return-type": "",
   },
   "tray": {
     "icon-size": 16,
@@ -49,8 +46,7 @@
   "clock": {
     "format": "{:%a, %b %d  %I:%M %p}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "on-click": "wofi",
-    "on-click-right": "swaync-client -t -sw",
+    "on-click": "swaync-client -t -sw",
   },
   "cpu": {
     "format": "   {usage}%",
@@ -92,14 +88,14 @@
     },
   },
   "network": {
-    "format-wifi": "    ({essid})",
+    "format-wifi": "   ({essid})",
     "format-ethernet": " {ipaddr}/{cidr}",
     "tooltip-format": "{ifname} via {gwaddr} ",
     "format-linked": " {ifname} (No IP)",
     "format-disconnected": "⚠ Disconnected",
     "format-alt": "{ifname}: {ipaddr}/{cidr}",
   },
-  "pulseaudio": {
+"pulseaudio": {
     "format": "{icon} {volume}% {format_source}",
     "format-bluetooth": "{icon}  {volume}% {format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
@@ -117,8 +113,7 @@
     },
   },
   "custom/power": {
-    "format": "⏻ ",
-    "tooltip": false,
+    "format": "",
     "on-click": "wlogout",
-  },
+  }
 }

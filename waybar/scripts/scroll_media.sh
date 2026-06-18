@@ -30,10 +30,6 @@ while true; do
             CURRENT_DISPLAY="$rest$first_char"
         fi
 
-    elif [ "$STATUS" = "Paused" ]; then
-        TRACK=$(playerctl metadata --format '{{ title }}' 2>/dev/null)
-        echo "󰏤  ${TRACK:0:$LEN}"
-        LAST_TRACK="$TRACK" # Keep track of the song even while paused
     else
         echo ""
         LAST_TRACK=""
