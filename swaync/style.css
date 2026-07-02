@@ -475,6 +475,27 @@ notificationwindow, blankwindow {
   /* style given to the active toggle button */
 }
 
+.widget-buttons-grid {
+  background-color: rgba(30, 30, 46, 0.5);
+  padding: 8px;
+  margin: 8px;
+  border-radius: 12px;
+  font-size: 25px;
+}
+
+.widget-buttons-grid > box > button {
+  background-color: #313244;
+  border-radius: 8px;
+  color: #cdd6f4;
+  margin: 4px;
+  padding: 10px;
+}
+
+.widget-buttons-grid > box > button:checked {
+  background-color: #89b4fa;
+  color: #11111b;
+}
+
 /* Menubar widget */
 .widget-menubar {
   /* The revealer buttons */

@@ -14,7 +14,7 @@
     "cpu",
     "temperature",
     "battery",
-    "custom/power"
+    "custom/power",
   ],
 
   "custom/fullscreen": {
@@ -95,7 +95,7 @@
     "format-disconnected": "⚠ Disconnected",
     "format-alt": "{ifname}: {ipaddr}/{cidr}",
   },
-"pulseaudio": {
+  "pulseaudio": {
     "format": "{icon} {volume}% {format_source}",
     "format-bluetooth": "{icon}  {volume}% {format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
@@ -111,9 +111,12 @@
       "car": "",
       "default": ["", "", ""],
     },
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pavucontrol"
   },
   "custom/power": {
     "format": "",
     "on-click": "wlogout",
-  }
+    "tooltip": false,
+  },
 }
