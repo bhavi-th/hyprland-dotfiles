@@ -1,41 +1,66 @@
+/* Global Reset and Font */
 * {
-  font-family: "JetBrainsMono Nerd Font Mono";
+  font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
 }
 
+/* The Main Window - Set to a solid 96% opacity */
 window {
-  background-color: rgba(0, 0, 0, 0.9);
-  border-radius: 1rem;
-  font-size: 1rem;
-}
-
-#input {
-  /* background-color: rgba(0, 0, 0, 0.5); */
-  background-color: transparent;
-  color: #ffffff;
-  border-radius: 0.5rem;
-  box-shadow: none;
-  padding: 0.5rem;
-  margin: 0.5rem;
-}
-
-#entry {
-  background-color: transparent;
-  color: #cdd6f4;
-  font-weight: 700;
-  padding: 0.75rem;
-  margin: 0.5rem 1rem 0.5rem 1rem;
-}
-
-#entry:selected {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(17, 17, 27, 0.96); 
   border: 2px solid rgba(255, 255, 255, 0.1);
-  border-radius: 0.5rem;
+  border-radius: 16px;
+  font-size: 14px;
 }
 
+/* Outer wrapper provides clean breathing room for the 2-column grid */
+#outer-box {
+  padding: 16px;
+}
+
+/* Search Input Box */
+#input {
+  background-color: rgba(30, 30, 46, 0.9);
+  color: #cdd6f4; 
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 14px;
+}
+
+#input:focus {
+  border: 1px solid #89b4fa; /* Ice Blue Accent on focus */
+}
+
+/* Hide scrollbar wrapper cleanly */
+#scroll {
+  margin-top: 4px;
+}
+
+/* Individual Grid Item (Cell) */
+#entry {
+  color: #a6adc8;
+  padding: 12px;
+  margin: 4px 6px; /* Horizontal margin keeps the columns separated */
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+
+/* Grid Selection - Unified card styling instead of a side-bar */
+#entry:selected {
+  background-color: rgba(137, 180, 250, 0.12); /* Subtle blue fill */
+  color: #89b4fa; /* Bright blue text */
+  border: 1px solid rgba(137, 180, 250, 0.3); /* Subtle bounding box */
+  border-radius: 8px;
+}
+
+/* Icon Spacing - Essential since allow_images=true */
 #entry image {
-  margin-right: 1rem;
+  margin-right: 14px;
 }
 
-#entry>*:not(expander) {
-  margin-left: 18px;
+/* Text alignment inside the grid card */
+#entry label {
+  font-weight: 600;
 }

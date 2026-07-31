@@ -4,9 +4,9 @@
 
 * {
   font-family:
-    "JetBrainsMono Nerd Font", "Font Awesome 6 Free", "Inter", sans-serif;
+    "JetBrainsMono Nerd Font Propo", "Font Awesome 6 Free", "Inter", sans-serif;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 14px;
   border: none;
   border-radius: 0;
   min-height: 0;
@@ -16,8 +16,12 @@
 
 
 tooltip {
-  background-color: rgba(0, 0, 0, 0.4);
+  background: rgba(30, 30, 46, 1);
+  color: black;
+  border: 1px solid rgb(123, 141, 201);
+  padding: 2.5px;
   border-radius: 10px;
+  font-size: 40px;
 }
 
 
@@ -32,15 +36,19 @@ window#waybar {
  * ========================================================================== */
 
 #workspaces,
+#window,
 #custom-fullscreen,
-#custom-media,
 #clock,
 #pulseaudio,
+#pulseaudio-slider,
+#backlight,
+#backlight-slider,
 #network,
 #cpu,
 #temperature,
 #battery,
 #tray,
+#privacy,
 #custom-power {
   background: rgba(30, 30, 46, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -60,19 +68,27 @@ window#waybar {
   /* GTK handles spacing via internal padding */
 }
 
-#custom-fullscreen {
-  font-size: 20px;
+#window{
+  margin-right: 8px;
+}
+
+#custom-fullscreen, #window {
+  font-size: 24px;
   margin-left: 6px;
   border-radius: 16px;
   padding: 0 10px;
 }
 
 #custom-media {
-  border-radius: 16px;
-  border-left: none;
+  margin: 2px 8px;
+  margin-right: 6px;
+  color: #b4befe;
+}
+
+#cava{
   margin: 2px 0px;
   margin-left: 6px;
-  margin-right: 6px;
+  padding-left: 8px;
   color: #b4befe;
 }
 
@@ -87,27 +103,60 @@ window#waybar {
 #pulseaudio {
   border-radius: 16px 0 0 16px;
   border-right: none;
+  padding-right: 6px;
   color: #89b4fa;
+}
+
+#backlight{
+  border-left: none;
+  border-right: none;
+  padding-right: 6px;
+  color: #89b4fa;
+}
+
+#pulseaudio-slider, #backlight-slider {
+  padding: 0px;
+  padding-right: 10px;
+  border-left: none;
+}
+
+#pulseaudio-slider slider, #backlight-slider slider {
+  all: unset;
+  min-height: 0;
+  min-width: 0;
+  opacity: 0;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+}
+
+#pulseaudio-slider trough, #backlight-slider trough {
+  min-height: 8px;
+  min-width: 75px;
+  border-radius: 5px;
+}
+
+#pulseaudio-slider highlight, #backlight-slider highlight {
+  min-width: 10px;
+  border-radius: 5px;
+  background: #89b4fa;
 }
 
 #network {
   border-radius: 0;
   border-left: none;
-  border-right: none;
   color: #94e2d5;
 }
 
 #cpu {
   border-radius: 0;
   border-left: none;
-  border-right: none;
   color: #a6e3a1;
 }
 
 #temperature {
   border-radius: 0;
   border-left: none;
-  border-right: none;
   color: #f9e2af;
 }
 
@@ -118,11 +167,14 @@ window#waybar {
   color: #a6e3a1;
 }
 
-/* Isolated System Tray & Power Anchors */
-#tray {
+#privacy{
+  margin-left: 8px;
+}
+
+#tray, #privacy {
   border-radius: 16px;
   margin-right: 8px;
-  padding: 0 12px;
+  padding: 0 8px;
 }
 
 #custom-power {
@@ -141,7 +193,7 @@ window#waybar {
   background: transparent;
   color: #6c7086;
   /* Dimmed default state */
-  padding: 0 8px;
+  padding: 4px 4px;
   margin: 4px 2px;
   border-radius: 8px;
   font-size: 12px;
@@ -172,10 +224,8 @@ window#waybar {
 
 /* Subtle feedback on system status items */
 #clock:hover,
-#pulseaudio:hover,
 #network:hover,
-#battery:hover,
-#custom-media:hover {
+#battery:hover{
   background: rgba(45, 47, 72, 0.9);
   color: #ffffff;
 }

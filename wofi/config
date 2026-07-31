@@ -1,4 +1,4 @@
-style=USER_HOME/.config/wofi/style.css
+style=/home/bhavith/.config/wofi/style.css
 
 [config]
 allow_images=true
@@ -9,5 +9,5 @@ insensitive=true
 no_actions=true
 hide_scroll=true
 columns=2
-width=800
-height=500
+width=720
+height=512

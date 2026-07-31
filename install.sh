@@ -54,7 +54,7 @@ for dir in "${CONFIG_DIRS[@]}"; do
 
     if [ "$dir" == "wofi" ]; then
       echo "Patching Wofi configuration path..."
-      sed -i "s|USER_HOME|$HOME|g" "$HOME/.config/wofi/config"
+      sed -i "s|/home/bhavith|$HOME|g" "$HOME/.config/wofi/config"
     fi
   else
     echo "Skipping $dir: Folder not found in $SCRIPT_DIR"

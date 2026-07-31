@@ -4,18 +4,35 @@
   "height": 34,
   "margin-top": 2,
 
-  // Choose the order of the modules
-  "modules-left": ["hyprland/workspaces", "custom/fullscreen", "custom/media"],
+  "modules-left": [
+    "custom/fullscreen",
+    "hyprland/workspaces",
+    "privacy",
+    "group/media",
+  ],
   "modules-center": ["clock"],
   "modules-right": [
     "tray",
-    "pulseaudio",
+    "group/volume",
+    "backlight",
+    "backlight/slider",
     "network",
     "cpu",
     "temperature",
     "battery",
+    "user",
     "custom/power",
   ],
+
+  "user": {
+    "format": "",
+    "interval": 60,
+    "icon": true,
+    "avatar": "/home/bhavith/.face",
+    "height": 24,
+    "width": 24,
+    "open-on-click": true,
+  },
 
   "custom/fullscreen": {
     "format": "{}",
@@ -24,6 +41,7 @@
     "exec": "/home/bhavith/.config/waybar/scripts/fullscreen_check.sh",
     "tooltip": false,
   },
+
   "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
@@ -35,47 +53,108 @@
       "default": "",
     },
   },
+
   "custom/media": {
-    "format": "{}",
     "exec": "/home/bhavith/.config/waybar/scripts/scroll_media.sh",
+    "escape": true,
+    "tooltip": false,
   },
+
   "tray": {
     "icon-size": 16,
     "spacing": 10,
   },
-  "clock": {
-    "format": "{:%a, %b %d  %I:%M %p}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "on-click": "swaync-client -t -sw",
+
+  "privacy": {
+    "icon-spacing": 4,
+    "icon-size": 18,
+    "transition-duration": 250,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 24,
+      },
+      {
+        "type": "audio-out",
+        "tooltip": true,
+        "tooltip-icon-size": 24,
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 24,
+      },
+      {
+        "type": "location",
+        "icon-name": "location-services-active-symbolic",
+      },
+    ],
+    "ignore-monitor": true,
+    "ignore": [
+      {
+        "type": "audio-in",
+        "name": "cava",
+      },
+      {
+        "type": "screenshare",
+        "name": "obs",
+      },
+    ],
   },
+
+  "clock": {
+    "format": "{:%a, %d %b %I:%M %p}",
+    "tooltip-format": "<tt><big>{calendar}</big></tt>",
+    "calendar": {
+      "format": {
+        "today": "<span color='#ff00ff'><b>{}</b></span>",
+      },
+    },
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "wofi",
+  },
+
   "cpu": {
-    "format": "   {usage}%",
+    "format": "  {usage}%",
     "tooltip": true,
   },
+
   "memory": {
     "format": "   {used:0.1f}G/{total:0.1f}G",
   },
+
   "temperature": {
     "critical-threshold": 80,
-    "format": "{icon}  {temperatureC}°C",
+    "format": "{icon} {temperatureC}°C",
     "format-icons": ["", "", ""],
   },
+
   "backlight": {
-    "format": "{icon}   {percent}%",
+    "format": "{percent}% {icon}",
     "format-icons": ["", "", "", "", "", "", "", "", ""],
   },
+
+  "backlight/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal",
+    "device": "nvidia_wmi_ec_backlight",
+  },
+
   "battery": {
     "states": {
       "warning": 30,
       "critical": 15,
     },
-    "format": "{icon}  {capacity}%",
-    "format-full": "{icon}  {capacity}%",
-    "format-charging": "  {capacity}%",
-    "format-plugged": "  {capacity}%",
-    "format-alt": "{time}  {icon}",
+    "format": "{icon} {capacity}%",
+    "format-full": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
     "format-icons": ["", "", "", "", ""],
   },
+
   "power-profiles-daemon": {
     "format": "{icon}",
     "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
@@ -87,21 +166,24 @@
       "power-saver": "",
     },
   },
+
   "network": {
-    "format-wifi": "   ({essid})",
+    "format-wifi": "  ({essid})",
     "format-ethernet": " {ipaddr}/{cidr}",
     "tooltip-format": "{ifname} via {gwaddr} ",
     "format-linked": " {ifname} (No IP)",
     "format-disconnected": "⚠ Disconnected",
     "format-alt": "{ifname}: {ipaddr}/{cidr}",
   },
+
   "pulseaudio": {
-    "format": "{icon} {volume}% {format_source}",
-    "format-bluetooth": "{icon}  {volume}% {format_source}",
+    "format": "{format_source}{volume}% {icon}",
+    "format-bluetooth": "{format_source}{volume}% {icon} ",
     "format-bluetooth-muted": " {icon} {format_source}",
     "format-muted": " {format_source}",
-    "format-source": " {volume}%",
-    "format-source-muted": "",
+    "format-source": " {volume}% ",
+    // "format-source-muted": "",
+    "format-source-muted": "",
     "format-icons": {
       "headphone": "",
       "hands-free": "",
@@ -112,11 +194,37 @@
       "default": ["", "", ""],
     },
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-    "on-click-right": "pavucontrol"
+    "on-click-right": "pavucontrol",
   },
+
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal",
+  },
+
+  "group/volume": {
+    "orientation": "horizontal",
+    "modules": ["pulseaudio", "pulseaudio/slider"],
+  },
+
   "custom/power": {
     "format": "",
     "on-click": "wlogout",
     "tooltip": false,
+  },
+
+  "cava": {
+    "cava_config": "$HOME/.config/cava/raw.conf",
+    "input_delay": 2,
+    "format-icons": [" ","▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+    "actions": {
+      "on-click-right": "mode",
+    },
+  },
+
+  "group/media": {
+    "orientation": "horizontal",
+    "modules": ["cava", "custom/media"],
   },
 }

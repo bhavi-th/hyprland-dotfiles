@@ -5,7 +5,7 @@
 !.gitignore
 !README.md
 !hypr/
-!hypr/hyprland.conf
+!hypr/hyprland.lua
 !hypr/hyprlock.conf
 !wofi/
 !wofi/config
