@@ -321,7 +321,7 @@ hl.bind(mainMod .. " + " .. "I", hl.dsp.layout("togglesplit"))
 
 -- dwindle
 
-hl.bind(mainMod .. " + " .. "F", hl.dsp.window.fullscreen())
+hl.bind(mainMod .. " + " .. "F", hl.dsp.window.fullscreen({ mode = 1 }))
 
 hl.bind(mainMod .. " + " .. "O", hl.dsp.exec_cmd("hyprlock"))
 
