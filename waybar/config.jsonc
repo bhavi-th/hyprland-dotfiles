@@ -1,12 +1,12 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 34,
+  "height": 42,
   "margin-top": 2,
 
   "modules-left": [
-    "custom/fullscreen",
     "hyprland/workspaces",
+    "custom/fullscreen",
     "privacy",
     "group/media",
   ],
@@ -43,7 +43,7 @@
   },
 
   "hyprland/workspaces": {
-    "disable-scroll": true,
+    "disable-scroll": false,
     "all-outputs": true,
     "warp-on-scroll": false,
     "format": "{name}",
@@ -210,7 +210,7 @@
 
   "custom/power": {
     "format": "",
-    "on-click": "wlogout",
+    "on-click": "wlogout -m 80 -b 5",
     "tooltip": false,
   },
 

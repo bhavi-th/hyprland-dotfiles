@@ -270,12 +270,6 @@ hl.gesture({
 	action = "workspace",
 })
 
--- 4-finger pinch inwards to close the active window
-hl.gesture({ fingers = 4, direction = "pinchin", action = "close" })
-
--- 3-finger pinch outwards to float a window
-hl.gesture({ fingers = 3, direction = "vertical", action = "float" })
-
 -- Example per-device config
 
 -- See https://wiki.hypr.land/Configuring/Keywords/#per-device-input-configs for more

@@ -72,11 +72,9 @@ window#waybar {
   margin-right: 8px;
 }
 
-#custom-fullscreen, #window {
-  font-size: 24px;
+#custom-fullscreen{
   margin-left: 6px;
   border-radius: 16px;
-  padding: 0 10px;
 }
 
 #custom-media {
